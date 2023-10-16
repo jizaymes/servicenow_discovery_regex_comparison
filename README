@@ -1,0 +1,35 @@
+Comparing the out of the box ServiceNow Regex for determining the discovery FQDN vs mine:
+
+Mine: ^([a-zA-Z0-9.-]+)\.(([a-zA-Z0-9-]+)\.([a-zA-Z0-9]+))$
+Theirs: ^([^.]+)\.((?:[^.]+\.)+[^.]+)$
+
+
+Testing machine1.testlab.domain.com
+- MY Match group 1: machine1.testlab
+- MY Match group 2: domain.com
+- DEF Match group 1: machine1
+- DEF Match group 2: testlab.domain.com
+
+Testing machine44.sub.anything.com
+- MY Match group 1: machine44.sub
+- MY Match group 2: anything.com
+- DEF Match group 1: machine44
+- DEF Match group 2: sub.anything.com
+
+Testing bleh4124-asfd.blah.sdd.st
+- MY Match group 1: bleh4124-asfd.blah
+- MY Match group 2: sdd.st
+- DEF Match group 1: bleh4124-asfd
+- DEF Match group 2: blah.sdd.st
+
+Testing poop.sub.dom.net
+- MY Match group 1: poop.sub
+- MY Match group 2: dom.net
+- DEF Match group 1: poop
+- DEF Match group 2: sub.dom.net
+
+Testing anotherdomain.lots.of.sub.domains.hos-abcv.net
+- MY Match group 1: anotherdomain.lots.of.sub.domains
+- MY Match group 2: hos-abcv.net
+- DEF Match group 1: anotherdomain
+- DEF Match group 2: lots.of.sub.domains.hos-abcv.net
