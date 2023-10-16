@@ -2,7 +2,7 @@ import re
 from rich import print
 
 input_string = ["machine1.testlab.domain.com", "machine44.sub.anything.com", "bleh4124-asfd.blah.sdd.st", "poop.sub.dom.net", "anotherdomain.lots.of.sub.domains.hos-abcv.net"]
-pattern = r"^([a-zA-Z0-9.-]+)\.(([a-zA-Z0-9-]+)\.([a-zA-Z0-9]+))$"
+pattern = r"^([a-zA-Z0-9.-]+)\.((?:[a-zA-Z0-9-]+)\.(?:[a-zA-Z0-9]+))$"
 
 default_pattern = r"^([^.]+)\.((?:[^.]+\.)+[^.]+)$"
 
